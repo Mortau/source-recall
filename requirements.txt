@@ -1,0 +1,9 @@
+# Production dependencies. Keep these pins synchronized with pyproject.toml.
+
+fastapi==0.141.1
+fastmcp==3.4.7
+httpx==0.28.1
+pydantic==2.13.4
+PyYAML==6.0.3
+qdrant-client==1.19.0
+uvicorn[standard]==0.52.1

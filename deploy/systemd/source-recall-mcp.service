@@ -1,0 +1,31 @@
+[Unit]
+Description=SourceRecall Streamable HTTP MCP service
+After=network-online.target source-recall-api.service
+Wants=network-online.target
+Requires=source-recall-api.service
+
+[Service]
+Type=simple
+User=aiadmin
+Group=aiadmin
+WorkingDirectory=/opt/source-recall
+Environment=SOURCE_RECALL_CONFIG=/etc/source-recall/source-recall.yaml
+ExecStart=/opt/source-recall/.venv/bin/source-recall-mcp
+
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0027
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=source-recall-mcp
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

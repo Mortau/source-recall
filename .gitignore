@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime state, logs, and local configuration
+*.db
+*.db-shm
+*.db-wal
+*.log
+config/source-recall.yaml
+diags/results/
+
+# Build output
+build/
+dist/
