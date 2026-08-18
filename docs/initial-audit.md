@@ -1,6 +1,6 @@
 # Initial prototype audit
 
-The imported Node 4 prototype contained four Python files, one YAML file, and a
+The imported prototype contained four Python files, one YAML file, and a
 systemd unit. Its overall separation of API, indexer, CLI, and MCP concerns was
 a useful starting point, and its embedding payload matched Jetson NLP.
 

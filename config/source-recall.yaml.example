@@ -5,13 +5,13 @@ service:
   port: 8070
 
 repositories:
-  root: /srv/source-recall/repositories
+  root: /opt/source-recall/repositories
   git_tracked_only: true
   require_clean_git: true
   max_file_bytes: 1048576
   include_extensions:
-    [.c, .cpp, .go, .h, .hpp, .java, .js, .json, .md, .py, .rs,
-     .toml, .ts, .tsx, .yaml, .yml]
+    [.c, .cpp, .epp, .erb, .go, .h, .hpp, .java, .js, .json, .md, .pp,
+     .py, .rb, .rs, .sh, .toml, .ts, .tsx, .yaml, .yml]
   exclude_dirs:
     [.git, .idea, .mypy_cache, .pytest_cache, .ruff_cache, .venv,
      .vscode, __pycache__, build, dist, node_modules, vendor]

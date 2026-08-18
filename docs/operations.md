@@ -58,9 +58,9 @@ next versioned collection and fully re-index every repository.
 
 ### Jetson NLP unavailable
 
-Check Node 2 `/live` and `/ready`, then its service logs. SourceRecall embedding
-cannot continue without it. Search can fall back from reranking only after the
-query embedding succeeds.
+Check the Jetson NLP host's `/live` and `/ready` routes, then its service logs.
+SourceRecall embedding cannot continue without it. Search can fall back from
+reranking only after the query embedding succeeds.
 
 ### ripgrep unavailable
 
@@ -69,7 +69,7 @@ silently used because the documented search contract is hybrid.
 
 ### Indexing reports an uncommitted tree
 
-Commit, stash, or discard the Node 4 working-tree change. Alternatively disable
+Commit, stash, or discard the managed working-tree change. Alternatively disable
 `require_clean_git` deliberately; the recorded commit will be prefixed with
 `working-tree:` to disclose that the content does not exactly match a commit.
 
@@ -86,7 +86,7 @@ Back up these independently:
 - Qdrant collections/snapshots — source chunks and vectors
 - `/var/lib/source-recall/source-recall.db` — jobs and index metadata
 - `/etc/source-recall/source-recall.yaml` — deployment configuration/secrets
-- `/srv/source-recall/repositories` or their authoritative Git remotes
+- `/opt/source-recall/repositories` or their authoritative Git remotes
 
 The SQLite database can be rebuilt operationally, but Qdrant must be restored or
 all repositories fully re-indexed.

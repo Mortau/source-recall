@@ -20,3 +20,9 @@ and the project intends to use semantic versioning after the initial alpha.
 - Jetson NLP embedding and reranking contract validation
 - FastAPI and Streamable HTTP MCP services
 - Unit tests, deployment assets, and public documentation
+
+### Changed
+
+- Use `/opt/source-recall/repositories` as the managed checkout root
+- Include Ruby, Puppet, EPP, ERB, and shell files in default indexing
+- Use infrastructure-neutral hostnames and wording in public examples

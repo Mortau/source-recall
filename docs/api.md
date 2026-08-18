@@ -1,6 +1,6 @@
 # HTTP API reference
 
-The default base URL is `http://<node4-host>:8070`. FastAPI publishes OpenAPI
+The example base URL is `http://source-recall:8070`. FastAPI publishes OpenAPI
 documentation at `/docs` and `/openapi.json`.
 
 If `security.api_token` is set, all routes except `/live`, `/ready`, `/health`,

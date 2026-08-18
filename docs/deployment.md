@@ -1,8 +1,8 @@
 # Deployment
 
-These instructions target Node 4 with SourceRecall in `/opt/source-recall`,
-Qdrant already available to the node, and Jetson NLP reachable over the trusted
-network.
+These instructions target a Linux host with SourceRecall in
+`/opt/source-recall`, Qdrant available to the host, and Jetson NLP reachable
+over the trusted network.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ network.
 ```bash
 sudo install -d -o aiadmin -g aiadmin -m 0750 \
   /opt/source-recall \
-  /srv/source-recall/repositories
+  /opt/source-recall/repositories
 sudo install -d -o root -g aiadmin -m 0750 /etc/source-recall
 ```
 
@@ -26,10 +26,10 @@ systemd creates `/var/lib/source-recall` and `/var/log/source-recall` through
 `StateDirectory` and `LogsDirectory`.
 
 Place clean repository checkouts directly beneath
-`/srv/source-recall/repositories`, for example:
+`/opt/source-recall/repositories`, for example:
 
 ```text
-/srv/source-recall/repositories/episode-tracker/.git
+/opt/source-recall/repositories/episode-tracker/.git
 ```
 
 ## Install SourceRecall

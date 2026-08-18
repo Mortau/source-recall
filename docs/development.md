@@ -16,7 +16,7 @@ pytest
 ```
 
 The unit suite uses temporary Git repositories, SQLite, mocked HTTP transports,
-and fake Qdrant clients. It does not call Node 2 or Node 4 services.
+and fake Qdrant clients. It does not call external Qdrant or Jetson NLP services.
 
 ## Local configuration
 
@@ -47,5 +47,5 @@ $env:SOURCE_RECALL_CONFIG = "$PWD\config\source-recall.yaml"
 ## Release validation
 
 Before a release, run lint and tests, build a wheel/sdist, install the wheel in a
-clean virtual environment, verify both console entry points, deploy to Node 4,
+clean virtual environment, verify both console entry points, deploy to the target host,
 and run `diags/validate_deployment.py` against a representative repository.

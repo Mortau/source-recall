@@ -22,7 +22,7 @@ the relevant Continue configuration, replacing the host address:
 mcpServers:
   - name: SourceRecall
     type: streamable-http
-    url: http://node4:8071/mcp/
+    url: http://source-recall:8071/mcp/
 ```
 
 The official Continue MCP guide is maintained at

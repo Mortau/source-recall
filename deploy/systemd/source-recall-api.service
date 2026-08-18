@@ -30,7 +30,7 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectHome=true
 ProtectSystem=strict
-ReadOnlyPaths=/srv/source-recall/repositories
+ReadOnlyPaths=/opt/source-recall/repositories
 RestrictSUIDSGID=true
 LockPersonality=true
 

@@ -25,6 +25,7 @@ Thumbs.db
 *.log
 config/source-recall.yaml
 diags/results/
+/repositories/
 
 # Build output
 build/

@@ -17,13 +17,15 @@ DEFAULT_CONFIG_PATH = Path("/etc/source-recall/source-recall.yaml")
 DEFAULTS: dict[str, Any] = {
     "service": {"host": "0.0.0.0", "port": 8070},
     "repositories": {
-        "root": "/srv/source-recall/repositories",
+        "root": "/opt/source-recall/repositories",
         "git_tracked_only": True,
         "require_clean_git": True,
         "max_file_bytes": 1_048_576,
         "include_extensions": [
             ".c",
             ".cpp",
+            ".epp",
+            ".erb",
             ".go",
             ".h",
             ".hpp",
@@ -31,8 +33,11 @@ DEFAULTS: dict[str, Any] = {
             ".js",
             ".json",
             ".md",
+            ".pp",
             ".py",
+            ".rb",
             ".rs",
+            ".sh",
             ".toml",
             ".ts",
             ".tsx",

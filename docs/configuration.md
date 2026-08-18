@@ -13,12 +13,16 @@ rejected so misspellings cannot silently select defaults.
 |---|---|---|
 | `service.host` | `0.0.0.0` | API bind address |
 | `service.port` | `8070` | API port |
-| `repositories.root` | `/srv/source-recall/repositories` | Parent of managed checkouts |
+| `repositories.root` | `/opt/source-recall/repositories` | Parent of managed checkouts |
 | `repositories.git_tracked_only` | `true` | Index only `git ls-files --cached` paths |
 | `repositories.require_clean_git` | `true` | Reject uncommitted working trees |
 | `repositories.max_file_bytes` | `1048576` | Per-file read limit |
 | `repositories.include_extensions` | See template | Indexed/searchable text extensions |
 | `repositories.exclude_dirs` | See template | Always-excluded relative directories |
+
+The default extension set includes Ruby (`.rb`), Puppet manifests (`.pp`),
+Embedded Puppet templates (`.epp`), ERB templates (`.erb`), and shell scripts
+(`.sh`) alongside the other languages shown in the template.
 
 Repository names are one folder component. Nested or absolute paths are never
 accepted through the API.
@@ -32,7 +36,7 @@ accepted through the API.
 | `qdrant.api_key` | `null` | Optional Qdrant credential |
 | `qdrant.timeout_seconds` | `30` | Qdrant request timeout |
 | `qdrant.embedding_dimensions` | `384` | Required vector dimensions |
-| `jetson_nlp.base_url` | Node 2 address | Jetson NLP base URL |
+| `jetson_nlp.base_url` | Jetson NLP address | Jetson NLP base URL |
 | `jetson_nlp.embedding_model` | BGE small identifier | Index/search contract identifier |
 | `jetson_nlp.request_timeout_seconds` | `30` | Interactive timeout |
 | `jetson_nlp.index_timeout_seconds` | `120` | Batch embedding timeout |

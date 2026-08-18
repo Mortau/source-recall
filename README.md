@@ -57,13 +57,13 @@ tests/              Automated tests
 ## API at a glance
 
 ```bash
-curl http://node4:8070/live
+curl http://source-recall:8070/live
 
-curl -X POST http://node4:8070/index \
+curl -X POST http://source-recall:8070/index \
   -H 'Content-Type: application/json' \
   -d '{"repository":"episode-tracker"}'
 
-curl -X POST http://node4:8070/search \
+curl -X POST http://source-recall:8070/search \
   -H 'Content-Type: application/json' \
   -d '{
     "repository":"episode-tracker",
@@ -82,7 +82,7 @@ When `security.api_token` is configured, add
 | Application | `/opt/source-recall` |
 | Virtual environment | `/opt/source-recall/.venv` |
 | Configuration | `/etc/source-recall/source-recall.yaml` |
-| Managed repositories | `/srv/source-recall/repositories` |
+| Managed repositories | `/opt/source-recall/repositories` |
 | Durable state | `/var/lib/source-recall/source-recall.db` |
 | Application logs | `/var/log/source-recall/source-recall.log` |
 | API service | `/etc/systemd/system/source-recall-api.service` |

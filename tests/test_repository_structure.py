@@ -64,5 +64,5 @@ def test_systemd_units_use_the_documented_runtime_contract() -> None:
         ]
         assert len(environment_lines) == 1
 
-    assert "ReadOnlyPaths=/srv/source-recall/repositories" in api_unit
-    assert "ReadWritePaths=/srv/source-recall/repositories" not in api_unit
+    assert "ReadOnlyPaths=/opt/source-recall/repositories" in api_unit
+    assert "ReadWritePaths=/opt/source-recall/repositories" not in api_unit
