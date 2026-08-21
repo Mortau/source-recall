@@ -105,6 +105,7 @@ def main() -> None:
         host=settings.mcp.host,
         port=settings.mcp.port,
         path=settings.mcp.path,
+        stateless_http=True,
     )
 
 

@@ -26,3 +26,5 @@ and the project intends to use semantic versioning after the initial alpha.
 - Use `/opt/source-recall/repositories` as the managed checkout root
 - Include Ruby, Puppet, EPP, ERB, and shell files in default indexing
 - Use infrastructure-neutral hostnames and wording in public examples
+- Run the remote MCP transport statelessly so service restarts do not invalidate
+  client sessions

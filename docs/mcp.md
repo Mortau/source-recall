@@ -13,6 +13,17 @@ index repositories, access Qdrant, or implement a second retrieval pipeline.
 The initial MCP surface is read-only. Administrative indexing remains in the
 CLI and HTTP API so an agent cannot silently mutate the index.
 
+## Session model
+
+The remote Streamable HTTP transport runs with `stateless_http=True`. The four
+tools are independent API calls and do not require MCP session state, sampling,
+resource subscriptions, or unsolicited server-to-client messages. Stateless
+operation prevents a server or cluster restart from leaving clients with an
+expired in-memory MCP session identifier.
+
+The local `stdio` transport remains process-scoped and is unaffected by the
+HTTP session setting.
+
 ## Continue
 
 Continue supports remote Streamable HTTP MCP servers in agent mode. Add this to
@@ -34,7 +45,8 @@ observable and reproducible.
 
 ## Transport security
 
-The FastMCP endpoint is unauthenticated in the initial trusted-network design.
+The stateless FastMCP endpoint is unauthenticated in the initial trusted-network
+design.
 Do not route port 8071 to the public internet. Use firewall restrictions or an
 authenticated TLS reverse proxy if the trust boundary expands.
 

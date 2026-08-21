@@ -32,6 +32,11 @@ search policy, and provenance. Jetson NLP owns embedding and reranking model
 execution. Qdrant owns vector persistence and nearest-neighbor queries. MCP is a
 thin adapter and contains no retrieval logic.
 
+The remote Streamable HTTP adapter is stateless. Every MCP tool call maps to an
+independent SourceRecall API request, so the service does not retain per-client
+session data. This allows MCP clients to continue after service or host restarts
+without presenting an in-memory session identifier from the previous process.
+
 ## Index integrity
 
 The default policy indexes only Git-tracked files from a clean working tree.

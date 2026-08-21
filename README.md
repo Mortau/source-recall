@@ -15,7 +15,7 @@ must remain under the operator's control.
 - Authoritative full re-indexing that removes obsolete Qdrant points
 - Hybrid vector and ripgrep retrieval with chunk-aware reciprocal-rank fusion
 - Optional cross-encoder reranking through Jetson NLP
-- Thin Streamable HTTP MCP integration with structured tool responses
+- Thin stateless Streamable HTTP MCP integration with structured tool responses
 - Durable SQLite job and index status
 - Validated YAML configuration and structured rotating-file logs
 - Single-worker, serialized indexing model with explicit resource bounds
