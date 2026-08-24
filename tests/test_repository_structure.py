@@ -18,6 +18,9 @@ def test_public_repository_has_required_files() -> None:
         "pyproject.toml",
         "requirements.txt",
         "config/source-recall.yaml.example",
+        "contrib/codex/AGENTS.md",
+        "contrib/continue/10-source-recall.md",
+        "contrib/vscode/source-recall.instructions.md",
         "deploy/systemd/source-recall-api.service",
         "deploy/systemd/source-recall-mcp.service",
         "docs/api.md",
@@ -25,6 +28,7 @@ def test_public_repository_has_required_files() -> None:
         "docs/configuration.md",
         "docs/deployment.md",
         "docs/development.md",
+        "docs/mcp.md",
         "docs/operations.md",
     }
     missing = [path for path in required if not (ROOT / path).is_file()]

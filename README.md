@@ -23,7 +23,7 @@ must remain under the operator's control.
 ## Architecture
 
 ```text
-Continue Agent
+VS Code / Codex / Continue agent
     |
     | Streamable HTTP MCP
     v
@@ -47,6 +47,7 @@ and scores.
 
 ```text
 config/             Versioned configuration template
+contrib/            Client-specific SourceRecall retrieval policies
 deploy/systemd/     API and MCP systemd units
 diags/              Deployment validation utilities
 docs/               Architecture, API, deployment, and operations guides
@@ -97,9 +98,14 @@ See [Deployment](docs/deployment.md) for the complete installation procedure.
 - [Configuration](docs/configuration.md)
 - [Deployment](docs/deployment.md)
 - [Development](docs/development.md)
-- [MCP integration](docs/mcp.md)
+- [MCP client setup and retrieval policies](docs/mcp.md)
 - [Operations](docs/operations.md)
 - [Initial audit](docs/initial-audit.md)
+
+The MCP guide includes native VS Code, the Codex IDE extension, and Continue
+configuration, plus the client-specific instruction files under `contrib/`
+that teach each agent when to use SourceRecall instead of its live workspace
+tools.
 
 ## Current scope
 

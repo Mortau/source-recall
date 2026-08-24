@@ -5,6 +5,7 @@ include README.md
 include SECURITY.md
 include requirements.txt
 recursive-include config *.example
+recursive-include contrib *.md
 recursive-include deploy *.service
 recursive-include diags *.py
 recursive-include docs *.md

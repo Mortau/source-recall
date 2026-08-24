@@ -19,6 +19,7 @@ and the project intends to use semantic versioning after the initial alpha.
 - Hybrid retrieval with chunk-aware reciprocal-rank fusion
 - Jetson NLP embedding and reranking contract validation
 - FastAPI and Streamable HTTP MCP services
+- VS Code, Codex, and Continue MCP setup and retrieval-policy templates
 - Unit tests, deployment assets, and public documentation
 
 ### Changed
