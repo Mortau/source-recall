@@ -11,6 +11,13 @@ from fastmcp.exceptions import ToolError
 
 from .config import Settings
 
+READ_ONLY_TOOL_ANNOTATIONS = {
+    "readOnlyHint": True,
+    "destructiveHint": False,
+    "idempotentHint": True,
+    "openWorldHint": False,
+}
+
 
 class SourceRecallApiClient:
     def __init__(self, settings: Settings):
@@ -53,7 +60,7 @@ def create_mcp(settings: Settings | None = None) -> FastMCP:
         ),
     )
 
-    @server.tool()
+    @server.tool(annotations=READ_ONLY_TOOL_ANNOTATIONS)
     async def search_codebase(
         repository: str,
         query: str,
@@ -67,7 +74,7 @@ def create_mcp(settings: Settings | None = None) -> FastMCP:
             json={"repository": repository, "query": query, "limit": limit},
         )
 
-    @server.tool()
+    @server.tool(annotations=READ_ONLY_TOOL_ANNOTATIONS)
     async def get_file(repository: str, path: str) -> dict[str, Any]:
         """Read one UTF-8 source file from a managed repository."""
 
@@ -76,13 +83,13 @@ def create_mcp(settings: Settings | None = None) -> FastMCP:
             f"/file/{repository}/{quote(path.lstrip('/'), safe='/')}",
         )
 
-    @server.tool()
+    @server.tool(annotations=READ_ONLY_TOOL_ANNOTATIONS)
     async def list_repositories() -> dict[str, Any]:
         """List managed repositories and their current index metadata."""
 
         return await client.request("GET", "/repositories")
 
-    @server.tool()
+    @server.tool(annotations=READ_ONLY_TOOL_ANNOTATIONS)
     async def get_index_status() -> dict[str, Any]:
         """Return SourceRecall model, schema, and repository index status."""
 
