@@ -79,9 +79,7 @@ def test_mcp_tools_route_to_api(
         return {"tool": tool_name}
 
     monkeypatch.setattr(mcp_server.SourceRecallApiClient, "request", fake_request)
-    server = mcp_server.create_mcp(
-        Settings.from_mapping({"logging": {"file": None}})
-    )
+    server = mcp_server.create_mcp(Settings.from_mapping({"logging": {"file": None}}))
 
     async def scenario():
         async with Client(server) as client:
