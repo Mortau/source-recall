@@ -1,4 +1,5 @@
 # SourceRecall
+[![M8ven Score](https://m8ven.ai/badge/mcp/mortau-source-recall-11s5fv?v=82213eb99ffdedac12a33f11803ae7c7&variant=verified)](https://m8ven.ai/mcp/mortau-source-recall-11s5fv)
 
 SourceRecall is a self-hosted repository intelligence service for AI coding
 assistants. It indexes clean Git working trees into Qdrant, combines semantic
